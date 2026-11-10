@@ -12,7 +12,8 @@ def discover_plugins():
         return
 
     for module_info in pkgutil.iter_modules([str(PLUGIN_DIR)]):
-        if module_info.name.startswith("_"):
+        # intentionally making invalid line
+        if module_info.name.startswith("_")
             continue
         try:
             yield importlib.import_module(f"plugins.{module_info.name}")
